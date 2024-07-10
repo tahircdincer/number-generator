@@ -7,26 +7,28 @@ const divLength = [...document.querySelectorAll("div")].length;
 btn.addEventListener("click", function () {
   let num;
   num = document.createElement("div");
-  if (Number(inputArea.value) == NaN) {
-    alert(" Enter a number. ");
-    inputArea.textContent = "";
-    return;
-  } else if (!inputArea.value) {
+  const inputAreaValue = inputArea.value;
+  if (!inputArea.value) {
     alert(" Enter a number. ");
     return;
-  } else {
+  } else if (Number(inputArea.value) % 2 === 0) {
     num.textContent = `${inputArea.value}`;
+  } else if (Number(inputArea.value) % 2 !== 0) {
+    num.style.backgroundColor = "red";
+    num.textContent = `${inputArea.value}`;
+  } else if (isPrime(inputAreaValue)) {
+    num.textContent = `${inputArea.value}`;
+    num.style.backgroundColor = "orange";
   }
-
-  checkNumber();
 
   container.appendChild(num);
 });
 
-function checkNumber() {
-  for (let i = 0; i < container.length; i++) {
-    if (parseInt(inputArea.value) % 2 === 0) {
-      num.style.backgroundColor = "red";
-    }
+const isPrime = (num) => {
+  for (let i = 2, s = Math.sqrt(num); i <= s; i++) {
+    if (num % i === 0) return false;
   }
-}
+  return num > 1;
+};
+
+// it requires to improve ' prime number ' ' part ' of this ' project '
