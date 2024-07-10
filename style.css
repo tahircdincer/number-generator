@@ -1,0 +1,64 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+:root {
+  --btn-clr: rgb(90, 157, 18);
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2rem;
+}
+
+h1 {
+  margin: 1rem auto;
+}
+button {
+  width: 10rem;
+  border: 0px;
+  padding: 0.2rem 0.1rem;
+  background-color: var(--btn-clr);
+  color: white;
+  border-radius: 0.3rem;
+}
+
+div {
+  background-color: green;
+  padding: 0.3rem;
+  width: 6rem;
+  border-radius: 0.3rem;
+  height: 2rem;
+  text-align: center;
+  font-weight: bold;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+}
+input {
+  width: 14rem;
+  padding: 0.4rem;
+}
+
+input:focus {
+  outline: solid 1px green;
+}
+
+button:hover {
+  background-color: green;
+  transition: 0.8s ease-in;
+  cursor: pointer;
+}
+
+.container {
+  display: grid;
+  margin: 2rem;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 0.3rem;
+}
